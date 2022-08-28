@@ -5,10 +5,314 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+        /* styles.css */
+/* style sheet for nsbe home page*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.nsbeSlides {
+  display:none;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 625px;
+  width: 330px;
+}
+
+.carousel {
+    width: 100%;
+    height: 150px;
+    
+    overflow: visible;
+    white-space:nowrap;
+}
+
+.col-container {
+  display: flex;
+  width: 100%;
+}
+
+.col {
+  flex: 1;
+  padding: 16px;
+}
+
+.container {
+  padding: 0 16px;
+  width: 100%;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+body {
+  background-image: linear-gradient(#000000, #C6C6C6);
+    background-color: #000000;
+    color: #000000;
+}
+
+div {
+  width: full;
+  padding: 0px;
+  margin: 10px;
+}
+
+header {
+    font-size: 4vw;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #FFFFFF;
+    
+}
+
+p {
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+li{
+  word-wrap: break-word;
+  white-space: normal;
+  color: #545454; 
+  font-weight: 500; 
+  font-size: 13.5px;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+.center {
+  margin: auto;
+  width: 95%;
+  border: none;
+  padding: 10px;
+}
+
+@keyframes slider{
+  0%{
+    left: 0;
+  }
+  20%{
+    left: 0;
+  }
+  25%{
+    left: -100%;
+  }
+  45%{
+    left: -100%;
+  }
+  50%{
+    left: -200%;
+  }
+  70%{
+    left: -200%;
+  }
+  75%{
+    left: -300%;
+  }
+   95%{
+    left: -300%;
+  }
+   100%{
+    left: -400%;
+  }
+}
+
+#slider {
+  overflow: hidden;
+}
+
+#slider figure img {
+  width: 20%;
+  float: left;
+}
+
+#slider figure {
+  position: relative;
+  padding-top: 160px;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 20s slider infinite;
+}
+
+/* need to test this section */
+nav {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+nav ul {
+  display: table-row;
+}
+
+nav li {
+  display: table-cell;
+  margin: 0;
+}
+
+a{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+
+i{
+  color: #FFFFFF;
+  font-size: 24px;
+  padding: 16px;
+}
+
+i:hover, i:active{
+  background-color: mediumpurple;
+  color: #FFFFFF;
+  transition: 0.2s;
+}
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Hello my name is Clarence Maxakato, an aspiring Software Developerk and welcome to My Portfolio.</h1>
+    <!-- nsbe_main.html -->
+<!-- This script contains code for the homepage of the NSBE website. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>I am Claro - Homepage</title>
+		
+		<meta charset="UTF-8">
+		<meta name="Author(s)" content="Emmanuel Jokotoye<br>Jeanette Kootin-Sanwu<br>Knowledge Lacy<br>Troy Meadows<br>Tinashe Tagarisa">
+		<meta name="Description" content="Welcome to my Portfolio. I am an aspiring developer with grand ambitions.">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://kit.fontawesome.com/6d1ac96594.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 9000);    
+}
+</script>
+	</head>
+	
+	<body>
+    <!-- Navigation Links -->
+    <nav class="w3-bar w3-black w3-padding-8 w3-mobile">
+      <img id="nsbe-uc-logo" src="https://lh3.googleusercontent.com/ldF09m286opKNAc60mtJil6eWP_8hgxFPPVhKy4DQwazd4tMzSCX-9V7OUrCVGZwrs9mVQ=s161" class="w3-left w3-padding w3-bar-item" style="width: 13.57142857142857%">
+      <a href="index.html" class="w3-padding-32 w3-button w3-bar-item w3-left w3-cell-middle w3-hover-red" style="width: 13.57142857142857%">Home</a>
+      <a href="About.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-yellow" style="width: 13.57142857142857%">About</a>
+      <a href="Education.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Education</a>
+      <a href="Skills.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Skills</a>
+      <a href="Testimonials.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Testimonials</a>
+      <a href="Contact.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Contact Us</a>
+    </nav>
+    
+    <div class="w3-cell-row">
+      <div class="w3-mobile w3-cell" style="width: 50%; margin: auto">
+        <header class="w3-left" style="padding: 5px 30px">Welcome To My Life</header>
+        <p style="width: 90%; padding: 30px 30px">Welcome to the Claro show</p>
+      </div>
+      
+      <div class="w3-mobile w3-cell w3-padding-8" style="margin: auto; max-width: 2px" id="slider">
+        <figure>
+          <img height="42" width="42" src= "Thierry.jpg">
+        </figure>
+      </div>
     </div>
+  </body>
+		
+	<!-- Footer -->
+	<footer class="w3-container w3-padding-16 w3-center w3-black w3-xlarge">
+		<!-- Social Media Links -->
+		<a href="https://www.facebook.com/iamclaro1/" class="w3-button w3-black w3-hover-red"><i class="fab fa-facebook-square"></i></a>
+		<a href="https://twitter.com/iamclaro" class="w3-button w3-black w3-hover-red"><i class="fab fa-twitter"></i></a>
+		<a href="https://www.instagram.com/iamclaro/" class="w3-button w3-black w3-hover-red"><i class="fab fa-instagram"></i></a>
+	
+	</footer>
+</html>
+
 </body>
 </html>

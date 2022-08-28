@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+  min-width: 320px!important;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-navigation {
+  margin: 0 auto;
+  top: 35px;
+  left: -1px;
+  position: fixed;
+  width: 101%;
+  height: 100px;
+  z-index: 100;
+  background-color: #3498DB;
+  -webkit-box-shadow: 0px 17px 5px -13px rgba(158, 158, 158, 0.68);
+  -moz-box-shadow: 0px 17px 5px -13px rgba(158, 158, 158, 0.68);
+  box-shadow: 0px 17px 5px -13px rgba(158, 158, 158, 0.68);
+}
+
+.main-menu {
+  color: #fff;
+  padding-top: 40px;
+  padding-right: 50px;
+  float: right;
+}
+
+.social-bar {
+  position: fixed;
+  background-color: white;
+  height: 35px;
+  width: 100%;
+  z-index: 99;
+}
+
+.social-icons {
+  margin-top: -3px;
+  color: #3498DB;
+  float: right;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 10px;
+  font-size: 18px;
+  transition: all 1s;
+}
+
+.social-icons li:last-child {
+  margin-right: 100px;
+}
+
+.social-icons li:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.main-menu li {
+  display: inline-block;
+  margin-left: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 0px solid #eee;
+  padding-bottom: 3px;
+  transition: border-width 0.2s;
+}
+
+.main-menu li a,
+a:hover,
+a:active,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.main-menu li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.active {
+  border-bottom: 2px solid white!important;
+  padding-button: 3px;
+}
+
+.main-menu li:hover {
+  cursor: pointer;
+  border-width: 2px;
+}
+
+.main-menu li:first-child {
+  margin-left: 0;
+}
+
+.logo h1 {
+  font-family: 'Pacifico', cursive;
+  padding-top: 10px;
+  padding-left: 50px;
+  color: #fff;
+}
+
+.nav-color {
+  background-color: #3498DB;
+}
+
+.about-row {
+  background-color: #ECF0F1;
+  width: 80%;
+  margin: 150px auto 0 auto;
+}
+
+.about-section {
+  z-index: 99;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ECF0F1;
+}
+
+.about-text {
+  font-size: 23px;
+  text-align: justify;
+}
+
+.about-pic {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 300px;
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(158, 158, 158, 0.68);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(158, 158, 158, 0.68);
+  box-shadow: 0px 0px 5px 1px rgba(158, 158, 158, 0.68);
+}
+
+.projects-section {
+  background-color: #2C3E50;
+  width: 100%;
+}
+
+.projects-section h2,
+.skills-section h2,
+.contact-section h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+}
+
+.skills-section {
+  background-color: #ECF0F1;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.contact-section h2 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.contact-section {
+  background-color: #2980B9;
+  position: relative;
+  padding-bottom: 150px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-section-row {
+  background-color: #2980B9;
+}
+
+.contact-section input {
+  margin: 0 auto;
+  border-radius: 0;
+  height: 50px;
+  border: 0;
+  width: 80%;
+}
+
+.contact-section textarea {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 0;
+  height: 150px;
+  border: 0;
+}
+
+.contact-section .btn {
+  border-radius: 0;
+  padding: 10px 25px 10px 25px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  background-color: white;
+  border: 0;
+  margin-top: 45px;
+}
+
+.strong-text {
+  font-weight: 700;
+  font-size: 25px;
+  display: block;
+}
+
+.project-img {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  -webkit-transition: filter 1s;
+  transition: filter 1s;
+}
+
+.project-img:hover {
+  cursor: pointer;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  
+  
+}
+
+.title-border {
+  border: 0px solid white;
+  padding: 20px 15px 20px 15px;
+  width: 200px;
+  margin: 0 auto;
+  background-color: #E74C3C;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 10px;
+  color: #777;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: -1000px;
+}
+
+.footer p {
+  padding-top: 8px;
+}
+
+.encourage-contact {
+  font-size: 23px;
+  margin: 50px;
+  text-align: justify;
+}
+
+.footer-social {
+  color: white;
+  font-size: 23px;
+  text-align: center;
+}
+
+.footer-social ul li {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 25px 10px 25px;
+  -webkit-transition: color 1s;
+}
+
+.footer-social ul li:hover {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.mobile-menu-icon {
+  display: none;
+  color: white;
+  font-size: 23px;
+  float: right;
+  margin-top: 25px;
+  margin-right: 50px;
+}
+
+.mobile-menu-icon:hover {
+  cursor: pointer;
+}
+
+.responsive-menu {
+  overflow: hidden;
+  z-index: 10;
+  top: 20px;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  background-color: #4e454b;
+  text-transform: uppercase;
+}
+
+.mobile-menu {
+  margin-top: 20px;
+  list-style-type: none;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+.mobile-menu a,
+a:visited,
+a:active,
+a:hover {
+  color: white;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.coming-soon {
+  position: relative;
+  clip: rect(0px, 500px, 400px, 0px);
+  height: 400px;
+  width: 400px;
+}
+
+.pen-center {
+  text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+  .about-text {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 150%;
+  }
+  .about-pic {
+    margin: 10px auto;
+  }
+  .footer {
+    bottom: 250px;
+  }
+  .pen-frame {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (min-width: 715px) {
+  .responsive-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  .main-menu {
+    display: none;
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
+  .mobile-menu-icon {
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .social-icons {
+    float: none;
+    display: inline-block;
+  }
+  
+  .social-icons li:last-child {
+    margin-right: 0;
+  }
+  .social-bar {
+    text-align: center;
+  }
+  .footer {
+    height: 70px;
+    bottom: 0px;
+  }
+}
+    </style>
+    <style>
+        .cv {
+  border: 1px solid #000;
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+
+.avatar {
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 50%, #454545 50%, #454545 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 50%, #454545 50%, #454545 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #454545 50%, #454545 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#454545', GradientType=0);
+  height: 300px;
+  text-align: center;
+}
+
+.avatar img {
+  padding: 5px;
+  border-radius: 50%;
+  margin-top: 25px;
+  background: #fff;
+  max-width:250px;
+}
+
+.gray {
+  background: #454545;
+}
+
+.bio {
+  background: #454545;
+  color: #fff;
+}
+
+.bio hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}
+
+.about h3,
+.contact h3 {
+  background-color: #4886a5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 1.4em;
+  margin: 0 0 24px 26px;
+  padding: 4px 0 4px 12px;
+  position: relative;
+  width: 100%;
+}
+
+.about h3:after,
+.contact h3:after {
+  border-color: #263746 transparent transparent #263746;
+  border-style: solid;
+  border-width: 6px;
+  bottom: -12px;
+  content: "";
+  position: absolute;
+  right: 0;
+}
+
+.about h3:before,
+.contact h3:before {
+  color: #fff;
+  content: "";
+  font: 26px sans-serif;
+  position: absolute;
+  right: 12px;
+  top: -2px;
+}
+
+.contact {
+  font-size: 1.2em;
+}
+
+.circle {
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.experience .glyphicon,
+.education .glyphicon,
+.work-skills .glyphicon,
+.personal-skills .glyphicon {
+  font-size: 1.5em;
+}
+
+.experience hr,
+.education hr,
+.work-skills hr,
+.personal-skills hr {
+  border-top: 1px dashed #000;
+}
+
+.experience .date,
+.education .date,
+.work-skills .date,
+
+.personal-skills .date {
+  font-size: 1em;
+}
+
+.experience .title,
+.education .title,
+.work-skills .title,
+.personal-skills .title {
+  color: #4886a5;
+  font-weight: bold;
+}
+
+.skills dt {
+  margin: 0;
+  padding: 1rem 0;
+  font-family: 'VT323', ;
+  font-size: 24px;
+  color: #3D3D3D;
+}
+
+.skills dt:first-child {
+  padding-top: 0;
+}
+
+.skills dt:after {
+  width: 100%;
+  background-color: #3D3D3D;
+  height: 0.5rem;
+  content: "";
+  display: block;
+}
+
+.skills dd {
+  width: 100%;
+  height: 0.5rem;
+  position: relative;
+  right: 0;
+  margin: -1.5rem 0 0;
+  overflow: hidden;
+  text-indent: -1000px;
+}
+
+.skills dd {
+  background-color: #4886a5;
+}
+
+body {
+  padding: 40px 0;
+}
+
+@media (max-width: 768px) {
+.mobile-no-pad {
+  padding-left:0!important;
+  padding-right:0!important;
+}
+  body {padding: 0;}
+  
+  .about h3,
+.contact h3 {
+  margin: 0 0 10px 0;
+  padding: 4px 0 4px 12px;
+}
+  .about h3:after,
+.contact h3:after {
+  display:none;
+}
+  
+ .about h3:before,
+.contact h3:before {
+  right: 0;
+  top: -2px;
+}
+}
+
+
+    </style>
+</head>
+<body>
+    <!docType HTML - Welcome to my about page>
+<html>
+  <head>
+
+  </head>
+<title> About Page </title>
+<body>
+    <nav class="w3-bar w3-black w3-padding-8 w3-mobile">
+        <img id="nsbe-uc-logo" src="https://lh3.googleusercontent.com/ldF09m286opKNAc60mtJil6eWP_8hgxFPPVhKy4DQwazd4tMzSCX-9V7OUrCVGZwrs9mVQ=s161" class="w3-left w3-padding w3-bar-item" style="width: 13.57142857142857%">
+        <a href="index.html" class="w3-padding-32 w3-button w3-bar-item w3-left w3-cell-middle w3-hover-red" style="width: 13.57142857142857%">Home</a>
+        <a href="About.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-yellow" style="width: 13.57142857142857%">About</a>
+        <a href="Education.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Education</a>
+        <a href="Skills.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Skills</a>
+        <a href="Testimonials.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Testimonials</a>
+        <a href="Contact.html" class="w3-padding-32 w3-bar-item w3-left w3-button w3-black w3-hover-red" style="width: 13.57142857142857%">Contact Us</a>
+      </nav>
+<div class="container cv pad-t-40 no-pad-lr">
+  
+    <!-- Left Column -->
+    <div class="col-md-4 matchHeight no-pad-lr gray"> 
+      <div class="col-md-12 avatar">
+        <img src="https://www.w3schools.com/howto/img_avatar.png">
+      </div>
+      <div class="col-md-12 bio pad-b-20">
+        <div class="center">
+          <h1 class="name">Clarence Maxakato</h1>
+          <hr>
+          <h2>Aspiring Web Developer</h2>
+        </div>
+        <div class="about m-t-50">
+          <h3>About</h3>
+          <div class="pad-l-30">
+            <p>My name is Clarence Maxakato. I'm a young and aspiring Web Developer. I was born in the Eastern Cape, but I was raised in beautiful Kwa-Zulu Natal. I enjoy reading, writing and socialising.</p>
+            <p>My aspirations include being a full stack developer that's proficient in a wide array of programming and development languages. I'd also love to start an incubator in Silicon Valley one day.  </p>
+          </div>
+        </div>
+        <div class="contact m-t-30">
+          <h3>Contact</h3>
+          <div class="pad-l-30">
+          <p><span class="glyphicon glyphicon-earphone circle" aria-hidden="true"></span> 079 648 9357</p>
+            
+          <p class="m-t-20"><span class="glyphicon glyphicon-map-marker circle" aria-hidden="true"></span> 1157 Greenfields.<br><span class="m-l-50">Harding, KZN 4680</span></p>
+            
+          <p class="m-t-20"><span class="glyphicon glyphicon-envelope circle" aria-hidden="true"></span> claromax.com</p>
+            
+          <p class="m-t-20"><span class="glyphicon glyphicon-link circle" aria-hidden="true"></span> www.twitter.com/iamclaro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Left Column -->
+    
+    <!-- Right Column -->
+    <div class="col-md-8 matchHeight no-pad-r">
+      
+      <!-- Start Experience -->
+      <div class="col-md-12 m-t-20">
+        <div class="experience">
+          <p><span class="glyphicon glyphicon-briefcase"></span><span class="h3"> EXPERIENCE</span></p>
+          <hr>
+          <!-- Row 1 -->
+          <div class="row m-b-10"> 
+            <div class="col-md-4">
+              <p class="date"><b>Call Force Communications</b><br><i>Sep 2017 - Sep 2018</i></p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <p class="title">English Tutor and Consultant</p>
+              <p>My main responsibility was to teach English as a first language to Chinese and Taiwanese students. The job was educational and fulfilling.</p>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="row m-b-10">
+            <div class="col-md-4">
+              <p class="date"><b>Play Energy Drink Entertainment</b><br><i>Jan 2016 - June 2017</i></p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <p class="title">Media Assets Team Leader</p>
+              <p>My main responsibities involve setting up lounge pockets at the different events that the company sponsored. Stage management was also one of the duties that was part and parcel of the job.</p>
+            </div>
+          </div>
+          <!-- Row 3 -->
+          <div class="row m-b-10">
+            <div class="col-md-4">
+              <p class="date"><b>CashTime Life</b><br><i>June 2014 - December 2015</i></p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <p class="title">Digital Media Manager</p>
+              <p>My responsibilities involved being a content creator for the different artists in the stable. I also created Social and Digital Media Campaigns for artists to engage directly with their fans on the various social media platforms. The task of a runner was also assined to me whenever the artists were on tour or there was an in-house event.</p>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <!-- End Experience -->
+      
+      <!-- Start Education -->
+      <div class="col-md-12">
+        <div class="education">
+          <p><span class="glyphicon glyphicon-education"></span><span class="h3">EDUCATION</span></p>
+          <hr>
+          <!-- Row 1 -->
+          <div class="row m-b-10">
+            <div class="col-md-4">
+              <p class="date"><b>High School</b><br><i>2005 - 2009</i></p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <p class="title">Harding Secondary School</p>
+            
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="row m-b-10">
+            <div class="col-md-4">
+              <p class="date"><b>Bachelor's Degree</b><br><i>2010 - 2014</i></p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <p class="title">UKZN Howard College</p>
+      
+            </div>
+          </div>
+          <!-- Row 3 -->
+          <div class="row m-b-10">
+            <div class="col-md-4">
+              <p class="date"><b>National Diploma</b><br><i>2019 - 2021</i></p>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <p class="title">Walter Sisulu University</p>
+            
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      <!-- End Education -->
+      
+      <!-- Start Work Skills -->
+      <div class="col-md-12">
+        <div class="work-skills">
+          <p><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><span class="h3"> Work Skills</span></p>
+          <hr>
+         <!-- Start Skills Left -->
+          <div class="col-md-6 no-pad-l">
+            <dl class="skills">
+              <dt>Skill 1 - Project Management</dt>
+              <dd>85</dd>
+              <dt>Skill 2 - Liaising with Stakeholders</dt>
+              <dd>90</dd>
+            </dl>
+          </div>
+          <!-- End Skills -->
+  
+          <!-- Start Skills Right -->
+          <div class="col-md-6 no-pad-r mobile-no-pad">
+            <dl class="skills">
+              <dt>Skill 3 - Microsoft Office</dt>
+              <dd>80</dd>
+              <dt>Skill 4 - Bookkeeping</dt>
+              <dd>65</dd>
+            </dl>
+          </div>
+          <!-- End Skills -->
+        </div>
+      </div>
+      <!-- End Work Skills -->
+      
+       <!-- Start Personal Skills -->
+      <div class="col-md-12 m-t-20">
+        <div class="personal-skills">
+          <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="h3"> Personal Skills</span></p>
+          <hr>
+         <!-- Start Skills Left -->
+          <div class="col-md-6 no-pad-l">
+            <dl class="skills">
+              <dt>Skill 1 - Writing</dt>
+              <dd>95</dd>
+              <dt>Skill 2 - Proofreading and Copyrighting</dt>
+              <dd>70</dd>
+            </dl>
+          </div>
+          <!-- End Skills -->
+  
+          <!-- Start Skills Right -->
+          <div class="col-md-6 no-pad-r mobile-no-pad">
+            <dl class="skills">
+              <dt>Skill 3 - Basketball</dt>
+              <dd>80</dd>
+              <dt>Skill 4 - Chess</dt>
+              <dd>70</dd>
+            </dl>
+          </div>
+          <!-- End Skills -->
+        </div>
+      </div>
+      <!-- End Personal Skills -->
+      
+    </div>
+    <!-- End Right Column -->
+    
+  </div>
+</body>
+</html>
